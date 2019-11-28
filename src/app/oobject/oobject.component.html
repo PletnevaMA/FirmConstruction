@@ -1,0 +1,41 @@
+
+<label>Тип объекта:</label>
+<input type="text" class="form-control" [(ngModel)]="Type_object" />
+<label> Адрес: </label>
+<input type="text" class="form-control" [(ngModel)]="Adress" />
+<label> Площадь: </label>
+<input type="text" class="form-control" [(ngModel)]="Ploshad" />
+<label> Цена: </label>
+<input type="text" class="form-control" [(ngModel)]="Prise" />
+
+<button class="bttn add" (click)="addOobject()">Добавить объект</button>
+<table class="table table-striped table-inverse">
+<tr class="list-group-item" *ngFor="let oobject of arrayOfOobject">
+<td class="Type_object">
+<h4>{{ oobject.Type_object }}</h4>
+</td>
+
+
+<td class="Adress">
+<h4>{{ oobject.Adress }}</h4>
+</td>
+
+<td class="Ploshad">
+<h4>{{ oobject.Ploshad }}</h4>
+</td>
+
+<td class="Prise">
+<h4>{{ oobject.Prise }}</h4>
+</td>
+
+<td class="ChangeOobject">
+    <h4><button class="bttn chng" (click)="setNewPloshad(oobject)">Изменить объект</button></h4>
+  </td>
+  <td class="SaveOobject">
+    <h4><button class="bttn chng" (click)="setNewOobject(oobject)">Сохранить изменения</button></h4>
+  </td>
+  <td class="DelOobject">
+    <h4><button class="bttn del" (click)="delOobject(oobject.OobjectID)">Удалить объект</button></h4>
+  </td>
+</tr>
+</table>
